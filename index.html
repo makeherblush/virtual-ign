@@ -2,37 +2,72 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#000000">
-<title>Ignatius Phone</title>
+<title>Ignatius Phone - iOS Experience</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="phone" id="phone">
-  <div id="home" class="layer"></div>
-  <div id="app" class="layer"></div>
-  <div id="lock" class="layer">
-    <div class="lk-top"><div id="lt" class="lk-time">09:41</div><div id="ld" class="lk-date"></div></div>
-    <div id="ln" class="lk-notifs"></div>
-    <div class="lk-bottom">
-      <button class="lk-btn" id="lk-torch">🔦</button>
-      <div class="lk-face"><div class="fid" id="fid">🔒</div><small>Swipe up to unlock</small></div>
-      <button class="lk-btn" id="lk-cam">📷</button>
+
+<div class="phone-frame">
+  <div class="phone" id="phone">
+    <!-- Status Bar & Dynamic Island -->
+    <div class="status-bar" id="status">
+      <span id="st-time">09:41</span>
+      <div class="dynamic-island-container">
+        <div class="dynamic-island">
+          <div class="camera-hole"></div>
+          <div class="sensor-hole"></div>
+        </div>
+      </div>
+      <span class="st-r">
+        <span class="signal-icon"></span>
+        <span class="wifi-icon">📶</span>
+        <span class="batt"><i></i></span>
+      </span>
     </div>
+
+    <!-- Layers -->
+    <div id="home" class="layer"></div>
+    <div id="app" class="layer"></div>
+    
+    <!-- Lock Screen -->
+    <div id="lock" class="layer">
+      <div class="lk-top">
+        <div class="lk-date" id="ld">Sunday, October 4</div>
+        <div class="lk-time" id="lt">09:41</div>
+      </div>
+      <div id="ln" class="lk-notifs"></div>
+      <div class="lk-bottom">
+        <button class="lk-btn glass-btn" id="lk-torch">🔦</button>
+        <div class="lk-face">
+          <div class="fid" id="fid">🔒</div>
+          <small>Usap ke atas untuk membuka</small>
+        </div>
+        <button class="lk-btn glass-btn" id="lk-cam">📷</button>
+      </div>
+    </div>
+
+    <!-- Panels & Overlays -->
+    <div id="nc" class="layer panel notification-center"></div>
+    <div id="cc" class="layer panel control-center"></div>
+    <div id="banner"></div>
+    <div id="modal" class="layer"></div>
+    <div id="toast"></div>
+
+    <!-- Gestures & Navigation Edges -->
+    <div class="edge edge-top" id="e-top"></div>
+    <div class="edge edge-left" id="e-left"></div>
+    <div class="edge edge-bottom" id="e-bottom">
+      <div class="home-indicator"></div>
+    </div>
+
+    <div id="torch"></div>
+    <div id="dim"></div>
   </div>
-  <div id="nc" class="layer panel"></div>
-  <div id="cc" class="layer panel"></div>
-  <div id="banner"></div>
-  <div id="modal" class="layer"></div>
-  <div id="toast"></div>
-  <div class="island"></div>
-  <div class="status" id="status"></div>
-  <div class="edge edge-top" id="e-top"></div>
-  <div class="edge edge-left" id="e-left"></div>
-  <div class="edge edge-bottom" id="e-bottom"><i class="home-ind"></i></div>
-  <div id="torch"></div>
-  <div id="dim"></div>
 </div>
+
+<!-- Scripts -->
 <script src="js/db.js"></script>
 <script src="js/core.js"></script>
 <script src="js/apps-comm.js"></script>
